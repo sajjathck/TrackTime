@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="glass-container">
+    <div class="tabs">
+      <button id="tab-timer" class="tab-btn active">Timer</button>
+      <button id="tab-stopwatch" class="tab-btn">Stopwatch</button>
+      <button id="tab-tracker" class="tab-btn">Tracker</button>
+    </div>
+
+    <div id="view-timer" class="view-section">
+      <div class="time-display" id="timer-display">25:00</div>
+
+      <div class="controls">
+        <button id="t-start-btn" class="btn primary-btn">Start</button>
+        <button id="t-pause-btn" class="btn warning-btn hidden">Pause</button>
+        <button id="t-reset-btn" class="btn danger-btn">Reset</button>
+      </div>
+
+      <div class="settings">
+        <button class="preset-btn" data-time="5">5m</button>
+        <button class="preset-btn" data-time="25">25m</button>
+        <button class="preset-btn" data-time="60">60m</button>
+      </div>
+    </div>
+
+    <div id="view-stopwatch" class="view-section hidden">
+      <div class="time-display" id="sw-display">00:00.00</div>
+
+      <div class="controls">
+        <button id="sw-start-btn" class="btn primary-btn">Start</button>
+        <button id="sw-pause-btn" class="btn warning-btn hidden">Pause</button>
+        <button id="sw-reset-btn" class="btn danger-btn">Reset</button>
+      </div>
+    </div>
+    
+    <div id="view-tracker" class="view-section hidden">
+        <h3 style="margin-top: 0; font-weight: 500;">Tab Usage Tracker</h3>
+        <div id="tracker-list-container">
+            <p id="tracker-status" style="text-align: center; opacity: 0.8; margin-top: 20px; font-size: 14px;">Tracking in progress...</p>
+        </div>
+        <div class="controls" style="margin-top: 20px; margin-bottom: 0; justify-content: center;">
+            <button id="reset-tracker-btn" class="btn danger-btn" style="width: 100%;">Clear Data</button>
+        </div>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
