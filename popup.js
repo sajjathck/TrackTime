@@ -10,9 +10,9 @@ const resetTrackerBtn = document.getElementById('reset-tracker-btn');
 
 let currentActiveTab = 'timer';
 
+tabTracker.addEventListener('click', () => switchTab('tracker'));
 tabTimer.addEventListener('click', () => switchTab('timer'));
 tabStopwatch.addEventListener('click', () => switchTab('stopwatch'));
-tabTracker.addEventListener('click', () => switchTab('tracker'));
 
 function switchTab(newTab) {
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -149,9 +149,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateTimerDisplay() {
-  const minutes = Math.floor(tRemaining / 60);
+  const hours = Math.floor(tRemaining / 3600);
+  const minutes = Math.floor((tRemaining % 3600) / 60);
   const seconds = tRemaining % 60;
-  tDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  if (hours > 0) {
+    tDisplay.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  } else {
+    tDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
 }
 
 function startTimer() {
@@ -282,7 +287,7 @@ function restoreState() {
     if (result.activeTab) {
       switchTab(result.activeTab);
     } else {
-        switchTab('timer');
+      switchTab('tracker'); // Tracker is now the default tab
     }
 
     if (result.tIsRunning && result.tTargetTime) {
