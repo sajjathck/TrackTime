@@ -2,6 +2,9 @@
 
 A simple, modern Chrome Extension combining time management tools with automatic website usage tracking.
 
+<img width="310" height="443" alt="image" src="https://github.com/user-attachments/assets/9ff3aa79-995e-4781-8380-e96955c4031b" />
+
+
 🚀 Key Features
 
 **Focus Timer**: Countdown timer with quick presets (5m, 25m, 60m).
